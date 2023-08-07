@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">login-register</string>
+    <string name="login_password">Enter Password:</string>
+    <string name="login_email">Enter Email:</string>
+    <string name="login">Login</string>
+    <string name="regis_now">If you already have account login now</string>
+    <string name="login_now">If you don\'t have an account Register now</string>
+    <string name="register">Register</string>
+    <string name="logout">logout</string>
+</resources>
