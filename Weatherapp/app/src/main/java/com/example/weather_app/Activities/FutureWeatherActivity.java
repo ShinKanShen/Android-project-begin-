@@ -27,7 +27,7 @@ public class FutureWeatherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_future_weather);
         ConstraintLayout backBtn=findViewById(R.id.backBtn);
-
+//        back to main screen when put back on screen
         backBtn.setOnClickListener(v->startActivity(new Intent(FutureWeatherActivity.this,MainActivity.class)));
         inputRecyclerViewCard();
 
@@ -36,6 +36,7 @@ public class FutureWeatherActivity extends AppCompatActivity {
 
     private void inputRecyclerViewCard() {
         ArrayList<weatherCard> items= new ArrayList<>();
+        // add data
         items.add(new weatherCard("Sat","storm","Storm",10,25));
         items.add(new weatherCard("Sun","cloudy","Cloudy",22,29));
         items.add(new weatherCard("Mon","windy","Windy",25,32));
@@ -43,6 +44,7 @@ public class FutureWeatherActivity extends AppCompatActivity {
         items.add(new weatherCard("Wen","sunny","Sunny",25,33));
         items.add(new weatherCard("Thu","rainy","Rainy",20,25));
         items.add(new weatherCard("Fri","cloudy","Rainy",20,25));
+//  create recycler view and set layout display for it
 
         recyclerView=findViewById(R.id.card_weather_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
