@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.example.weather_app.Adpaters.HourlyAdapter;
 import com.example.weather_app.Domains.Hourly;
@@ -17,14 +19,17 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView.Adapter adapterHourly;
     private  RecyclerView recyclerView;
+    private TextView next7day;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        next7day=findViewById(R.id.next_7day);
+        next7day.setOnClickListener(v->startActivity(new Intent(MainActivity.this, FutureWeatherActivity.class)));
         inputRecyclerView();
+
 
     }
 
