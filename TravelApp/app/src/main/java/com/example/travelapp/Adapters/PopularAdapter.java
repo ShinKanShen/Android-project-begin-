@@ -1,6 +1,7 @@
 package com.example.travelapp.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,23 +9,29 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.widget.TintableCheckedTextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.GranularRoundedCorners;
+import com.example.travelapp.Activities.DetailAvtivity;
+import com.example.travelapp.Activities.MainActivity;
 import com.example.travelapp.Domains.PopularDomain;
 import com.example.travelapp.R;
 
+import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.viewholder> {
 
     Context context;
-    DecimalFormat decimalFormat;
+
     ArrayList<PopularDomain> items;
     public PopularAdapter(ArrayList<PopularDomain> items) {
         this.items = items;
-        decimalFormat=new DecimalFormat("###,###,###,###");
+
     }
 
 
@@ -44,7 +51,17 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.viewhold
         holder.scoreTxt.setText(""+items.get(position).getScore());
         int drawableResourceId=holder.itemView.getResources().getIdentifier(items.get(position).getPic(),
                 "drawable",holder.itemView.getContext().getPackageName());
-        Glide.with(context).load(drawableResourceId).into(holder.pic_path);
+        Glide.with(context)
+                .load(drawableResourceId)
+                .transform(new CenterCrop(),new GranularRoundedCorners(40,40,40,40))
+                .into(holder.pic_path);
+
+        holder.itemView.setOnClickListener(v-> {
+
+                Intent intent=new Intent(holder.itemView.getContext(), DetailAvtivity.class);
+                intent.putExtra("object",items.get(position));
+                holder.itemView.getContext().startActivity(intent);
+            } );
 
     }
 

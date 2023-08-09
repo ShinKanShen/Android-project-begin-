@@ -1,6 +1,8 @@
 package com.example.travelapp.Domains;
 
-public class PopularDomain {
+import java.io.Serializable;
+
+public class PopularDomain implements Serializable {
     private String title;
     private String location;
     private String description;
@@ -8,10 +10,10 @@ public class PopularDomain {
     private boolean guide;
     private double score;
     private String pic;
-    private boolean wofi;
+    private boolean wifi;
     private int price;
 
-    public PopularDomain(String title, String location, String description, int bed, boolean guide, double score, String pic, boolean wofi, int pice) {
+    public PopularDomain(String title, String location, String description, int bed, boolean guide, double score, String pic, boolean wifi, int price) {
         this.title = title;
         this.location = location;
         this.description = description;
@@ -19,7 +21,7 @@ public class PopularDomain {
         this.guide = guide;
         this.score = score;
         this.pic = pic;
-        this.wofi = wofi;
+        this.wifi = wifi;
         this.price = price;
     }
 
@@ -79,12 +81,12 @@ public class PopularDomain {
         this.pic = pic;
     }
 
-    public boolean isWofi() {
-        return wofi;
+    public boolean isWifi() {
+        return wifi;
     }
 
-    public void setWofi(boolean wofi) {
-        this.wofi = wofi;
+    public void setWifi(boolean wifi) {
+        this.wifi = wifi;
     }
 
     public int getPrice() {

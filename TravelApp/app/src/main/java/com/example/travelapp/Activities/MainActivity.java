@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<PopularDomain> items = new ArrayList<>();
         items.add(new PopularDomain("Mar caible, avendia lago","Miami","The room was great size.. amazing mattress, \npillows and so soft bed sheets!!!!"
                ,2,true,4.5,"pic1",true,1030));
-        items.add(new PopularDomain("Holiday Inn Resort Ho Tram","Vung Tau","The room was great size.. amazing mattress, \npillows and so soft bed sheets!!!!",2,false,4,"pic2",true,930));
+        items.add(new PopularDomain("Holiday Inn Resort Ho Tram","Vung Tau","The room was great size.. amazing mattress, \npillows and so soft bed sheets!!!!",3,false,4,"pic2",true,930));
         items.add(new PopularDomain("Vias Hotel Vung Tau","Vung Tau","The room was great size.. amazing mattress, \npillows and so soft bed sheets!!!!",4,true,4.5,"pic3",true,10000));
 
         recyclerPopular=findViewById(R.id.popularRecyclerView);
